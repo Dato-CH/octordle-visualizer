@@ -1,0 +1,31 @@
+<!-- <p-fieldset legend="Guesses" class="flex">
+  <div class="flex flex-col gap-2">
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess01"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess02"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess03"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess04"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess05"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess06"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess07"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess08"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess09"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess10"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess11"/>
+    <input type="text" pSize="small" pInputText maxlength="5" [formControl]="guesses.controls.guess12"/>
+  </div>
+</p-fieldset> -->
+
+<p-fieldset legend="Guesses" class="flex">
+  <div class="flex flex-col gap-2">
+    @for (ctrl of guesses().controls; track ctrl) {
+      <input
+        type="text"
+        pSize="small"
+        pInputText
+        maxlength="5"
+        [formControl]="ctrl"
+        [class]="getValidityClass(ctrl)"
+      />
+    }
+  </div>
+</p-fieldset>
