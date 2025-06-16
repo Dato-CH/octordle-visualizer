@@ -19,9 +19,9 @@ export class DifficultyComponent {
   });
 
   difficultyOptions = [
-    { label: 'Chill', value: 16 },
-    { label: 'Classic', value: 13 },
-    { label: 'Extreme', value: 12 },
+    { label: '12', value: 12 },
+    { label: '13', value: 13 },
+    { label: '16', value: 16 },
   ];
 
   constructor() {

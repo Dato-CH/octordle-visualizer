@@ -1,7 +1,5 @@
 import { Component, effect, ElementRef, inject, input, output, QueryList, signal, ViewChildren } from '@angular/core';
 
-import { InputOtp, InputOtpModule as PrimeInputOtpModule } from 'primeng/inputotp';
-import { FieldsetModule as PrimeFieldsetModule } from 'primeng/fieldset';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { wordFormControl } from '../../models/wordFormControl.model';
 
@@ -10,7 +8,7 @@ import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-guesses',
-  imports: [PrimeFieldsetModule, PrimeInputOtpModule, ReactiveFormsModule, InputTextModule],
+  imports: [ReactiveFormsModule, InputTextModule],
   templateUrl: './guesses.component.html',
   styleUrl: './guesses.component.css'
 })

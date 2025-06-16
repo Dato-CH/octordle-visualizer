@@ -1,12 +1,11 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { ResultBoxComponent } from "../result-box/result-box.component";
 import { FieldsetModule as PrimeFieldsetModule } from 'primeng/fieldset';
-import { DatePipe } from '@angular/common';
 import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-results',
-  imports: [ResultBoxComponent, PrimeFieldsetModule, DatePipe],
+  imports: [ResultBoxComponent, PrimeFieldsetModule],
   templateUrl: './results.component.html',
   styleUrl: './results.component.css'
 })

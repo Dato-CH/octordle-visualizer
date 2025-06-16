@@ -1,22 +1,14 @@
-<p-fieldset legend="Results">
-  <div class="p-8 " style="background-color: #151515;">
-
-    <strong class="flex justify-center" style="color: #e1e1e1;"> {{ resultsService.difficultyText() }} OCTORDLE </strong>
-    <a class="flex justify-center" style="color: #e1e1e1;"> {{ resultsService.date() | date:'yyyy-MM-dd' }} </a>
-
-    <br>
-
-    <div class="grid grid-cols-4 grid-rows-2 gap-4">
-      @for (resultGrid of resultsService.wordResults(); track $index) {
-        <div class="grid grid-cols-5 grid-rows-12 gap-0.5">
-          @for (row of resultGrid; track $index) {
-            @for (color of row; track $index) {
-              <app-result-box [color]="color" />
-            }
-          }
-        </div>
-      }
-    </div>
-    
+<div class="w-[410px]">
+  <div class="grid grid-cols-4 grid-rows-2 gap-4">
+    @for (resultGrid of resultsService.wordResults(); track $index) {
+      <div class="grid grid-cols-5 grid-rows-12 gap-0.5">
+        @for (row of resultGrid; track $index) { 
+          @for (color of row; track $index)
+          {
+            <app-result-box [color]="color" />
+          } 
+        }
+      </div>
+    }
   </div>
-</p-fieldset>
+</div>

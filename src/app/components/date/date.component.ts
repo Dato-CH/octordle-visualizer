@@ -1,10 +1,11 @@
 import { Component, effect, inject, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DatePickerModule } from 'primeng/datepicker';
+import { FluidModule } from 'primeng/fluid';
 import { ResultsService } from '../../services/results.service';
 @Component({
   selector: 'app-date',
-  imports: [DatePickerModule, ReactiveFormsModule],
+  imports: [DatePickerModule, ReactiveFormsModule, FluidModule],
   templateUrl: './date.component.html',
   styleUrl: './date.component.css'
 })

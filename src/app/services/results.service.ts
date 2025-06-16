@@ -5,10 +5,14 @@ import { computed, Injectable, signal } from '@angular/core';
 })
 export class ResultsService {
 
-words = signal(Array.from({ length: 8 }, () => ''));
-guesses = signal(Array.from({ length: 16 }, () => ''));
+  words = signal(Array.from({ length: 8 }, () => ''));
+  guesses = signal(Array.from({ length: 16 }, () => ''));
   date = signal<Date>(new Date());
   numberOfGuesses = signal<number>(12);
+  author = signal<string>('');
+
+  copied = signal<boolean>(false);
+  copying = signal<boolean>(false);
 
   wordResults = computed(() => 
     this.words().map(word =>

@@ -1,13 +1,34 @@
-<div class="grid grid-rows-[1fr_auto_1fr] grid-cols-[1fr_auto_1fr] gap-4">
-  <div class="row-start-1"></div>
-  <div class="row-start-3"></div>
-  <div class="row-start-2 col-start-2 flex flex-row gap-2">
-    <div class="row-start-2 col-start-1 flex flex-col gap-2">
-      <app-difficulty />
-      <app-date />
-      <app-words />
+<div class="grid grid-rows-[1pc_auto_1pc] grid-cols-[1fr_700px_1fr]" >
+  <div class="row-start-2 col-start-2 flex flex-row gap-2 p-4 rounded-xl" style="background-color: #151515">
+
+
+    <div class="grid grid-rows-[72px_auto_auto] grid-cols-1">
+
+      <app-difficulty class="flex justify-center items-center" />
+      <div class="flex flex-row p-2 gap-2">
+        <app-words />
+        <app-guesses />
+      </div>
+      <div class="flex justify-center items-end p-2">
+        <div class="flex flex-col gap-2">
+          <app-author />
+          <app-date />
+          <p-button (click)="copy()" fluid [disabled]="copyButtonIsDisabled"> {{copyButtonText}} </p-button>
+        </div>
+      </div>
+
     </div>
-    <app-guesses class="row-start-2 col-start-2" />
-    <app-results class="row-start-2 col-start-3" />
+
+
+    <div #captureTarget style="background-color: #151515" class="p-4">
+      <app-results-headline />
+      <br>
+      <app-results />
+    </div>
+  
+
   </div>
 </div>
+
+
+
