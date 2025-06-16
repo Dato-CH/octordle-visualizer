@@ -1,4 +1,4 @@
-import { Component, effect, output } from '@angular/core';
+import { Component, computed, effect, inject, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { wordFormControl } from '../../models/wordFormControl.model';
 
@@ -7,6 +7,7 @@ import { FieldsetModule as PrimeFieldsetModule } from 'primeng/fieldset';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-words',
@@ -15,7 +16,7 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
   styleUrl: './words.component.css'
 })
 export class WordsComponent {
-  wordsEvent = output<string[]>();
+  resultsService = inject(ResultsService);
 
   words = new FormGroup( {
     word1: wordFormControl(),
@@ -28,14 +29,11 @@ export class WordsComponent {
     word8: wordFormControl(),
   });
 
-  words2 = new FormControl()
-
   constructor() {
     effect(() => {
       this.words.valueChanges.subscribe(value => {
-
         const wordArray = Object.values(value ?? {}).map(v => v ?? '');
-        this.wordsEvent.emit(wordArray as string[]);
+        this.resultsService.words.set(wordArray); 
       });
     })
   }

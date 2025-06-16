@@ -1,12 +1,15 @@
-<p-fieldset legend="Results" class="flex">
-  <div class="p-8 flex flex-col" style="background-color: #151515;">
-    <strong class="flex justify-center" style="color: #e1e1e1;"> {{ difficultyText }} OCTORDLE </strong>
-    <a class="flex justify-center" style="color: #e1e1e1;"> {{ date() | date:'yyyy-MM-dd' }} </a>
+<p-fieldset legend="Results">
+  <div class="p-8 " style="background-color: #151515;">
+
+    <strong class="flex justify-center" style="color: #e1e1e1;"> {{ resultsService.difficultyText() }} OCTORDLE </strong>
+    <a class="flex justify-center" style="color: #e1e1e1;"> {{ resultsService.date() | date:'yyyy-MM-dd' }} </a>
+
     <br>
+
     <div class="grid grid-cols-4 grid-rows-2 gap-4">
-      @for (word of words(); track $index) {
+      @for (resultGrid of resultsService.wordResults(); track $index) {
         <div class="grid grid-cols-5 grid-rows-12 gap-0.5">
-          @for (row of getResultWithCutoff(word, guesses()!); track $index) {
+          @for (row of resultGrid; track $index) {
             @for (color of row; track $index) {
               <app-result-box [color]="color" />
             }
@@ -14,5 +17,6 @@
         </div>
       }
     </div>
+    
   </div>
 </p-fieldset>

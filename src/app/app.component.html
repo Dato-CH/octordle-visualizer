@@ -3,23 +3,11 @@
   <div class="row-start-3"></div>
   <div class="row-start-2 col-start-2 flex flex-row gap-2">
     <div class="row-start-2 col-start-1 flex flex-col gap-2">
-      <app-difficulty
-        (numberOfGuessesEvent)="enteredNumberOfGuesses = $event"
-      />
-      <app-date (dateEvent)="enteredDate = $event" />
-      <app-words (wordsEvent)="enteredWords = $event" />
+      <app-difficulty />
+      <app-date />
+      <app-words />
     </div>
-    <app-guesses
-      class="row-start-2 col-start-2"
-      (guessesEvent)="enteredGuesses = $event"
-      [numberOfGuesses]="enteredNumberOfGuesses"
-    />
-    <app-results
-      class="row-start-2 col-start-3"
-      [words]="enteredWords"
-      [guesses]="enteredGuesses"
-      [date]="enteredDate"
-      [numberOfGuesses]="enteredNumberOfGuesses"
-    />
+    <app-guesses class="row-start-2 col-start-2" />
+    <app-results class="row-start-2 col-start-3" />
   </div>
 </div>

@@ -1,7 +1,8 @@
-import { Component, effect, output } from '@angular/core';
+import { Component, effect, inject, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { SelectButtonModule as PrimeSelectButtonModule } from 'primeng/selectbutton';
+import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-difficulty',
@@ -10,7 +11,8 @@ import { SelectButtonModule as PrimeSelectButtonModule } from 'primeng/selectbut
   styleUrl: './difficulty.component.css',
 })
 export class DifficultyComponent {
-  numberOfGuessesEvent = output<number>();
+
+  resultsService = inject(ResultsService);
 
   form = new FormGroup({
     numberOfGuesses: new FormControl(12)
@@ -25,7 +27,7 @@ export class DifficultyComponent {
   constructor() {
     effect(() => {
       this.form.valueChanges.subscribe(value => {
-        this.numberOfGuessesEvent.emit(value.numberOfGuesses!);
+        this.resultsService.numberOfGuesses.set(value.numberOfGuesses!);
       });
     })
   }

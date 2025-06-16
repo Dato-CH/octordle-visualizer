@@ -1,4 +1,4 @@
-import { Component, effect, ElementRef, input, output, QueryList, signal, ViewChildren } from '@angular/core';
+import { Component, effect, ElementRef, inject, input, output, QueryList, signal, ViewChildren } from '@angular/core';
 
 import { InputOtp, InputOtpModule as PrimeInputOtpModule } from 'primeng/inputotp';
 import { FieldsetModule as PrimeFieldsetModule } from 'primeng/fieldset';
@@ -6,6 +6,7 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular
 import { wordFormControl } from '../../models/wordFormControl.model';
 
 import { InputTextModule } from 'primeng/inputtext';
+import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-guesses',
@@ -14,30 +15,35 @@ import { InputTextModule } from 'primeng/inputtext';
   styleUrl: './guesses.component.css'
 })
 export class GuessesComponent {
-  numberOfGuesses = input<number>(15);
-  guessesEvent = output<string[]>();
-  guesses = signal(new FormArray<FormControl>([]));
+  resultsService = inject(ResultsService);
+
+  guesses = new FormGroup({
+    guess01: wordFormControl(),
+    guess02: wordFormControl(),
+    guess03: wordFormControl(),
+    guess04: wordFormControl(),
+    guess05: wordFormControl(),
+    guess06: wordFormControl(),
+    guess07: wordFormControl(),
+    guess08: wordFormControl(),
+    guess09: wordFormControl(),
+    guess10: wordFormControl(),
+    guess11: wordFormControl(),
+    guess12: wordFormControl(),
+
+    guess13: wordFormControl(),
+
+    guess14: wordFormControl(),
+    guess15: wordFormControl(),
+    guess16: wordFormControl(),
+  })
 
   constructor() {
     effect(() => {
-      const count = this.numberOfGuesses();
-      const formArray = new FormArray<FormControl>([]);
-      for (let i = 0; i < count; i++) {
-        formArray.push(wordFormControl());
-      }
-      this.guesses.set(formArray);
-    });
-
-    effect(() => {
-      this.guesses().valueChanges.subscribe(value => {
-        const wordArray = value.map(v => v ?? '');
-        this.guessesEvent.emit(wordArray);
+      this.guesses.valueChanges.subscribe(value => {
+        const wordArray = Object.values(value ?? {}).map(v => v ?? '');
+        this.resultsService.guesses.set(wordArray)
       });
-    });
-  }
-
-  getValidityClass(formControl: FormControl) {
-    if (formControl.touched && formControl.invalid) return 'ng-invalid';
-    return '';
+    })
   }
 }

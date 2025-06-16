@@ -1,6 +1,7 @@
-import { Component, effect, output } from '@angular/core';
+import { Component, effect, inject, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DatePickerModule } from 'primeng/datepicker';
+import { ResultsService } from '../../services/results.service';
 @Component({
   selector: 'app-date',
   imports: [DatePickerModule, ReactiveFormsModule],
@@ -9,7 +10,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 })
 export class DateComponent {
 
-  dateEvent = output<Date>();
+  resultsService = inject(ResultsService);
 
   form = new FormGroup({
     date: new FormControl<Date>(new Date())
@@ -18,8 +19,9 @@ export class DateComponent {
   constructor() {
     effect(() => {
       this.form.valueChanges.subscribe(value => {
-        this.dateEvent.emit(value.date!);
+        this.resultsService.date.set(value.date!);
       });
     })
   }
+  
 }
