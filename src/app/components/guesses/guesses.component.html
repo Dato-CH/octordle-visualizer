@@ -1,14 +1,14 @@
 <div class="flex flex-col gap-0.5 w-[100px]">
 
-  <input type="text" pInputText placeholder="guess 01" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess01"/>
-  <input type="text" pInputText placeholder="guess 02" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess02"/>
-  <input type="text" pInputText placeholder="guess 03" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess03"/>
-  <input type="text" pInputText placeholder="guess 04" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess04"/>
-  <input type="text" pInputText placeholder="guess 05" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess05"/>
-  <input type="text" pInputText placeholder="guess 06" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess06"/>
-  <input type="text" pInputText placeholder="guess 07" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess07"/>
-  <input type="text" pInputText placeholder="guess 08" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess08"/>
-  <input type="text" pInputText placeholder="guess 09" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess09"/>
+  <input type="text" pInputText placeholder="guess 1" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess01"/>
+  <input type="text" pInputText placeholder="guess 2" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess02"/>
+  <input type="text" pInputText placeholder="guess 3" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess03"/>
+  <input type="text" pInputText placeholder="guess 4" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess04"/>
+  <input type="text" pInputText placeholder="guess 5" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess05"/>
+  <input type="text" pInputText placeholder="guess 6" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess06"/>
+  <input type="text" pInputText placeholder="guess 7" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess07"/>
+  <input type="text" pInputText placeholder="guess 8" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess08"/>
+  <input type="text" pInputText placeholder="guess 9" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess09"/>
   <input type="text" pInputText placeholder="guess 10" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess10"/>
   <input type="text" pInputText placeholder="guess 11" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess11"/>
   <input type="text" pInputText placeholder="guess 12" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess12"/>
@@ -16,10 +16,13 @@
   @if (resultsService.numberOfGuesses() > 12) {
     <input type="text" pInputText placeholder="guess 13" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess13"/>
   }
-
   @if (resultsService.numberOfGuesses() > 13) {
     <input type="text" pInputText placeholder="guess 14" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess14"/>
+  }
+  @if (resultsService.numberOfGuesses() > 14) {
     <input type="text" pInputText placeholder="guess 15" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess15"/>
+  }
+  @if (resultsService.numberOfGuesses() > 15) {
     <input type="text" pInputText placeholder="guess 16" pSize="small" class="h-4 border-1 rounded-sm px-2" maxlength="5" [formControl]="guesses.controls.guess16"/>
   }
 

@@ -9,8 +9,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-author',
   imports: [InputTextModule, FluidModule, ReactiveFormsModule],
-  templateUrl: './author.component.html',
-  styleUrl: './author.component.css'
+  templateUrl: './author.component.html'
 })
 export class AuthorComponent {
   resultsService = inject(ResultsService);

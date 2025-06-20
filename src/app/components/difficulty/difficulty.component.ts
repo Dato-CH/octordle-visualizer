@@ -2,13 +2,13 @@ import { Component, effect, inject, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { SelectButtonModule as PrimeSelectButtonModule } from 'primeng/selectbutton';
+import { SelectModule as PrimeSelectModule } from 'primeng/select';
 import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-difficulty',
-  imports: [PrimeSelectButtonModule, ReactiveFormsModule],
-  templateUrl: './difficulty.component.html',
-  styleUrl: './difficulty.component.css',
+  imports: [PrimeSelectButtonModule, ReactiveFormsModule, PrimeSelectModule],
+  templateUrl: './difficulty.component.html'
 })
 export class DifficultyComponent {
 
@@ -19,9 +19,10 @@ export class DifficultyComponent {
   });
 
   difficultyOptions = [
-    { label: '12', value: 12 },
-    { label: '13', value: 13 },
-    { label: '16', value: 16 },
+    { label: 'Standard - Extreme', value: 12 },
+    { label: 'Standard - Classic', value: 13 },
+    { label: 'Standard - Chill', value: 16 },
+    { label: 'Sequence', value: 15 },
   ];
 
   constructor() {

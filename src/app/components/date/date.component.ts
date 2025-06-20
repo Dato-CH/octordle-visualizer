@@ -6,8 +6,7 @@ import { ResultsService } from '../../services/results.service';
 @Component({
   selector: 'app-date',
   imports: [DatePickerModule, ReactiveFormsModule, FluidModule],
-  templateUrl: './date.component.html',
-  styleUrl: './date.component.css'
+  templateUrl: './date.component.html'
 })
 export class DateComponent {
 

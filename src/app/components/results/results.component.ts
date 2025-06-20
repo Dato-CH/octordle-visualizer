@@ -6,8 +6,7 @@ import { ResultsService } from '../../services/results.service';
 @Component({
   selector: 'app-results',
   imports: [ResultBoxComponent, PrimeFieldsetModule],
-  templateUrl: './results.component.html',
-  styleUrl: './results.component.css'
+  templateUrl: './results.component.html'
 })
 export class ResultsComponent {
   resultsService = inject(ResultsService);

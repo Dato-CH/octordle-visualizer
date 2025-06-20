@@ -3,8 +3,7 @@ import { Component, input } from '@angular/core';
 @Component({
   selector: 'app-result-box',
   imports: [],
-  templateUrl: './result-box.component.html',
-  styleUrl: './result-box.component.css'
+  templateUrl: './result-box.component.html'
 })
 export class ResultBoxComponent {
   color = input.required<'G'|'Y'|'X'|'_'>()

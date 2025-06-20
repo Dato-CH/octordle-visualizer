@@ -6,8 +6,7 @@ import { ResultsService } from '../../services/results.service';
 @Component({
   selector: 'app-results-headline',
   imports: [DatePipe],
-  templateUrl: './results-headline.component.html',
-  styleUrl: './results-headline.component.css'
+  templateUrl: './results-headline.component.html'
 })
 export class ResultsHeadlineComponent {
   resultsService = inject(ResultsService);

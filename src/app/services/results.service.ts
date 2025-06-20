@@ -24,6 +24,7 @@ export class ResultsService {
     12: 'EXTREME',
     13: 'CLASSIC',
     16: 'CHILL',
+    15: 'SEQUENCE'
   };
 
   difficultyText = computed(() => this.DIFFICULTY_MAP[this.numberOfGuesses()] ?? '');
