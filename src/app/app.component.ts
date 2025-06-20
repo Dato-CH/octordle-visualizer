@@ -1,15 +1,7 @@
-import { Component, ElementRef, inject, OnInit, viewChild, ViewChild } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { Component, ElementRef, inject, viewChild } from '@angular/core';
+
 
 import { ButtonModule as PrimeButtonModule } from 'primeng/button';
-import { InputOtpModule as PrimeInputOtpModule } from 'primeng/inputotp';
-import { FieldsetModule as PrimeFieldsetModule } from 'primeng/fieldset';
-import { SelectButtonModule as PrimeSelectButtonModule } from 'primeng/selectbutton';
 import { WordsComponent } from './components/words/words.component';
 import { GuessesComponent } from './components/guesses/guesses.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -18,17 +10,13 @@ import { DifficultyComponent } from './components/difficulty/difficulty.componen
 import { ResultsHeadlineComponent } from './components/results-headline/results-headline.component';
 import { AuthorComponent } from './components/author/author.component';
 import { CaptureImageService } from './services/html-to-image.service';
-import { FluidModule } from 'primeng/fluid';
+import { TooltipComponent } from "./components/tooltip/tooltip.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     PrimeButtonModule,
-    PrimeInputOtpModule,
-    ReactiveFormsModule,
-    PrimeFieldsetModule,
-    PrimeSelectButtonModule,
     WordsComponent,
     GuessesComponent,
     ResultsComponent,
@@ -36,8 +24,8 @@ import { FluidModule } from 'primeng/fluid';
     DifficultyComponent,
     ResultsHeadlineComponent,
     AuthorComponent,
-    FluidModule
-  ],
+    TooltipComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

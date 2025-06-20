@@ -11,6 +11,7 @@
       </div>
       <div class="flex justify-center items-end p-2">
         <div class="flex flex-col gap-2">
+          <app-tooltip/>
           <app-author />
           <app-date />
           <p-button (click)="copy()" fluid [disabled]="copyButtonIsDisabled"> {{copyButtonText}} </p-button>
